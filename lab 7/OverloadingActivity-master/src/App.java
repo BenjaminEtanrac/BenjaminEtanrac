@@ -1,10 +1,12 @@
+import javax.sound.sampled.SourceDataLine;
+
 public class App {
     /**
      * This method takes in two int parameters to add.
      * 
      */
     private static int sum2(int num1, int num2){
-        return num1 + num2;
+        return computeSum(num1, num2);
     }
 
     /**
@@ -12,7 +14,7 @@ public class App {
      * 
      */
     private static int sum3(int num1, int num2, int num3){
-        return num1 + num2 + num3;
+        return computeSum(num1, num2, num3);
     }
 
     /**
@@ -21,24 +23,56 @@ public class App {
      * One computing the sum of two numbers, and one computing the sum
      * of three numbers. 
      */
+    public static int computeSum(int num1, int num2){
+        int result;
+        result = num1 + num2;
+        return result;
+    }
+
+    public static int computeSum(int num1, int num2, int num3){
+        int result;
+        result = num1 + num2 + num3;
+        return result;
+    }
+    
 
 
     /**
      * 
      * Create method that returns the greater integer value
      */
-
-     
+    public static int greaterValue(int num1, int num2){
+        if(num1 > num2){
+            return num1;
+        }
+        else{
+            return num2;
+        }
+    }
+    
     /**
      * 
      * Create method that returns the greater double value
      */
+
+    public static Double greaterValue(double num1, double num2){
+        if(num1 > num2){
+            return num1;
+        }
+        else{
+            return num2;
+        }
+    }
+    
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         /**
          * Create Method calls that takes in 2 parameters, and 3 parameters
          * respectively and computes their sum.
          */
+
+        System.out.println("The sum of the two numbers is: " + sum2(1, 2));
+        System.out.println("The sum of the three numbers is: " + sum3(1,3,5));
 
         /**
          * Call the greaterValue method with integer parameters
